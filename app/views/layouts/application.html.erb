@@ -34,7 +34,9 @@
         <div class="navbar-collapse collapse navbar-responsive-collapse">
           <% if user_signed_in? %>
           <ul class="nav navbar-nav">
-            <li><%= link_to "作品列表", "/items"  %></li>
+            <li><%= link_to "作品列表", "/items/admin_index"  %></li>
+            <li><%= link_to "点赞管理", "/scores"  %></li>
+            <li><%= link_to "评论管理", "/comments"  %></li>
           </ul>
           <ul class="nav navbar-nav" style='float:right'>
             <li><%= link_to "欢迎你：#{current_user.email}", "/users/#{current_user.id}"  %></li>

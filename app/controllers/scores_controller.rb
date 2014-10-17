@@ -4,16 +4,13 @@ class ScoresController < ApplicationController
 
   def index
     @scores = Score.all
-    respond_with(@scores)
   end
 
   def show
-    respond_with(@score)
   end
 
   def new
     @score = Score.new
-    respond_with(@score)
   end
 
   def edit
@@ -22,17 +19,17 @@ class ScoresController < ApplicationController
   def create
     @score = Score.new(score_params)
     @score.save
-    respond_with(@score)
+    redirect_to :back, notice: '操作成功'
   end
 
   def update
     @score.update(score_params)
-    respond_with(@score)
+    redirect_to :back, notice: '操作成功'
   end
 
   def destroy
     @score.destroy
-    respond_with(@score)
+    redirect_to :back, notice: '操作成功'
   end
 
   private

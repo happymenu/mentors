@@ -4,16 +4,13 @@ class CommentsController < ApplicationController
 
   def index
     @comments = Comment.all
-    respond_with(@comments)
   end
 
   def show
-    respond_with(@comment)
   end
 
   def new
     @comment = Comment.new
-    respond_with(@comment)
   end
 
   def edit
@@ -22,17 +19,17 @@ class CommentsController < ApplicationController
   def create
     @comment = Comment.new(comment_params)
     @comment.save
-    respond_with(@comment)
+    redirect_to :back, notice: '操作成功'
   end
 
   def update
     @comment.update(comment_params)
-    respond_with(@comment)
+    redirect_to :back, notice: '操作成功'
   end
 
   def destroy
     @comment.destroy
-    respond_with(@comment)
+    redirect_to :back, notice: '操作成功'
   end
 
   private

@@ -1,3 +1,5 @@
+<p id="notice"><%= notice %></p>
+
 <p>
   当前图片: <%= image_tag @item.logo.url, :style => 'height: 200px' %><br/>
 </p>
@@ -11,3 +13,8 @@
   <strong>Introduction:</strong>
   <%= @item.introduction %>
 </p>
+
+<%= link_to '编辑', edit_item_path(@item) %> |
+<%= link_to '返回', items_path %>
+<%= link_to '查看手机端效果', @item %>
+

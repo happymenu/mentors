@@ -1,12 +1,21 @@
 # -*- encoding : utf-8 -*-
 class ItemsController < ApplicationController
-  before_action :set_item, only: [:show, :edit, :update, :destroy]
+  before_action :set_item, only: [:show, :edit, :update, :destroy, :admin_show]
 
   def index
+    @items = Item.all
+    render layout: false
+  end
+
+  def admin_index
     @items = Item.all
   end
 
   def show
+    render layout: false
+  end
+
+  def admin_show
   end
 
   def new

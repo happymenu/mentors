@@ -4,7 +4,14 @@ Rails.application.routes.draw do
 
   resources :comments
 
-  resources :items
+  resources :items do
+    member do
+      get :admin_show
+    end
+    collection do
+      get :admin_index
+    end
+  end
 
   root 'users#welcome'
   resources :user_account_records
