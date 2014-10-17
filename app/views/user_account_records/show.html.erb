@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Voucher code:</strong>
+  <%= @user_account_record.voucher_code %>
+</p>
+
+<p>
+  <strong>Cost:</strong>
+  <%= @user_account_record.cost %>
+</p>
+
+<p>
+  <strong>Account:</strong>
+  <%= @user_account_record.account %>
+</p>
+
+<p>
+  <strong>Result:</strong>
+  <%= @user_account_record.result %>
+</p>
+
+<p>
+  <strong>Raw log:</strong>
+  <%= @user_account_record.raw_log %>
+</p>
+
+<%= link_to 'Edit', edit_user_account_record_path(@user_account_record) %> |
+<%= link_to 'Back', user_account_records_path %>

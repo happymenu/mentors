@@ -1,0 +1,18 @@
+<%= form_tag "/users/#{current_user.id}/pay" do  %>
+  <table class='table table-hover table-striped' style='width: 500px'>
+    <tr>
+      <td style='width: 130px'> 消费码</td>
+      <td> <%= text_field_tag :voucher_code, '', :class => 'form-control', :placeholder => '例如： 666888'
+      %> </td>
+    </tr>
+    <tr>
+      <td> 实际消费金额</td>
+      <td> <%= text_field_tag :cost, '', :class => 'form-control', :placeholder => '纯数字, 例如：200' %> </td>
+    </tr>
+    <tr>
+      <td colspan='2'> <%= submit_tag '确定', :class => 'btn btn-primary' %> </td>
+    </tr>
+  </table>
+<% end %>
+<h3>收入历史</h3>
+<%= render 'account_history' %>

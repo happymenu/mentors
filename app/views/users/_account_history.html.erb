@@ -1,0 +1,18 @@
+<table class='table table-hover table-striped'>
+  <tr>
+    <th>时间</th>
+    <th>消费码</th>
+    <th>消费金额</th>
+    <th>打入到了账户</th>
+    <th>结果</th>
+  </tr>
+  <% UserAccountRecord.where('user_id = ?', current_user.id).order('created_at desc').each do |record| %>
+    <tr>
+      <td><%= record.created_at %></td>
+      <td><%= record.voucher_code %></td>
+      <td><%= record.cost %></td>
+      <td><%= record.account %></td>
+      <td><%= record.raw_log %></td>
+    </tr>
+  <% end %>
+</table>

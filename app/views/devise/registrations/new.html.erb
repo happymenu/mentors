@@ -1,0 +1,19 @@
+<h2>注册</h2>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %>
+
+  <div><%= f.label :email, 'Email' %><br />
+  <%= f.email_field :email, autofocus: true %></div>
+
+  <div><%= f.label :password, '密码' %>
+  <% if @validatable %><i>( 最少长度 <%= @minimum_password_length %>  位)</i><% end %><br />
+    <%= f.password_field :password, autocomplete: "off" %></div>
+
+  <div><%= f.label :password_confirmation, '确认密码' %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "off" %></div>
+
+  <div><%= f.submit "确定", :class => 'btn btn-primary' %></div>
+<% end %>
+
+<%= render "devise/shared/links" %>
