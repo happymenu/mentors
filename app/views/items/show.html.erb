@@ -3,6 +3,8 @@
 <p>
   <strong>Logo:</strong>
   <%= @item.logo %>
+  当前图片: <%= image_tag @item.logo.url, :style => 'height: 200px' %><br/>
+  当前图片: <%= @item.logo.current_path %>
 </p>
 
 <p>

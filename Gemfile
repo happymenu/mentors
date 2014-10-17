@@ -12,6 +12,7 @@ gem 'devise', '3.4.0'
 gem "twitter-bootstrap-rails", '3.2.0'
 gem 'thin', '1.6.2'
 # gem 'migration_comments', '0.2.1'
+gem 'carrierwave'
 
 group :test, :development do
   gem 'capistrano', '2.12.0'

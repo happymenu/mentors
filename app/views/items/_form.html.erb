@@ -1,17 +1,18 @@
 <%= form_for(@item) do |f| %>
   <div class="field">
     <%= f.label :logo %><br>
-    <%= f.text_field :logo %>
+    当前图片: <%= image_tag @item.logo.url, :style => 'height: 200px' %>
+    <%= f.file_field :logo %>
   </div>
   <div class="field">
-    <%= f.label :title %><br>
+    标题：
     <%= f.text_field :title %>
   </div>
   <div class="field">
-    <%= f.label :introduction %><br>
+    正文：
     <%= f.text_area :introduction %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit '确定'%>
   </div>
 <% end %>
