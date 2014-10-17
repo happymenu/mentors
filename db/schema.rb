@@ -1,4 +1,4 @@
-# -*- encoding : utf-8 -*-
+# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -11,7 +11,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141015094238) do
+ActiveRecord::Schema.define(version: 20141017055123) do
+
+  create_table "comments", force: true do |t|
+    t.text     "body"
+    t.string   "ip"
+    t.string   "im_id"
+    t.string   "im_type"
+    t.integer  "item_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "items", force: true do |t|
+    t.string   "logo",         default: ""
+    t.string   "title",        default: ""
+    t.text     "introduction"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "scores", force: true do |t|
+    t.integer  "item_id",    default: 0
+    t.string   "ip",         default: ""
+    t.string   "im_id",      default: ""
+    t.string   "im_type",    default: ""
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "user_account_records", force: true do |t|
     t.string   "voucher_code"
