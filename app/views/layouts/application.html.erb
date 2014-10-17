@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= content_for?(:title) ? yield(:title) : "HappyGift 后台" %></title>
+    <title><%= content_for?(:title) ? yield(:title) : "后台" %></title>
     <%= csrf_meta_tags %>
 
     <!--[if lt IE 9]>
@@ -30,16 +30,11 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="/">HappyGift</a>
+        <a class="navbar-brand" href="/">Mentors</a>
         <div class="navbar-collapse collapse navbar-responsive-collapse">
           <% if user_signed_in? %>
           <ul class="nav navbar-nav">
-            <% if current_user.email.include? 'admin' %>
-            <li><%= link_to "商家列表", "/users"  %></li>
-            <% else %>
-            <li><%= link_to "售卖", "/users/#{current_user.id}/show_pay_page"  %></li>
-            <li><%= link_to "查看我的账户明细", "/users/#{current_user.id}/show_account_history" %></li>
-            <% end %>
+            <li><%= link_to "作品列表", "/items"  %></li>
           </ul>
           <ul class="nav navbar-nav" style='float:right'>
             <li><%= link_to "欢迎你：#{current_user.email}", "/users/#{current_user.id}"  %></li>
@@ -74,7 +69,7 @@
       </div><!--/row-->
 
       <footer>
-        <p>&copy; Happy Gift 2014</p>
+        <p>&copy; 2014</p>
       </footer>
 
     </div> <!-- /container -->

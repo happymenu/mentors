@@ -5,12 +5,6 @@ Rails.application.routes.draw do
 
   devise_for :users
   resources :users do
-    member do
-      get :edit_company
-      get :show_account_history
-      get :show_pay_page
-      post :pay
-    end
     collection do
       get :welcome
     end
