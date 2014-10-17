@@ -11,3 +11,11 @@
   <strong>Introduction:</strong>
   <%= @item.introduction %>
 </p>
+
+<%= link_to '评论', '' %>,
+<%= link_to "点赞(目前#{@item.scores.count}个赞)", '' %>
+<h5>评论列表</h5>
+
+<%= @item.comments.each do |comment|%>
+  <%=  comment.body %> -- <br/>
+<% end %>
