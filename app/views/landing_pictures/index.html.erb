@@ -7,10 +7,14 @@
           <!-- 左侧的两个图片 -->
           <table>
             <tr>
-              <td><%= image_tag @landing_pictures[0].try(:logo).try(:url), style: 'height: 50%'  %></td>
+              <td><%= link_to image_tag(@landing_pictures[0].try(:logo).try(:url), style: 'height: 50%' ),
+                "/items?landing_picture_id=#{@landing_pictures[0].id}"
+                %></td>
             </tr>
             <tr>
-              <td><%= image_tag @landing_pictures[1].try(:logo).try(:url), style: 'height: 50%'  %></td>
+              <td><%= link_to image_tag(@landing_pictures[1].try(:logo).try(:url), style: 'height: 50%' ),
+                "/items?landing_picture_id=#{@landing_pictures[1].id}"
+                %></td>
             </tr>
           </table>
         </td>
@@ -18,10 +22,14 @@
           <!-- 右侧的两个图片 -->
           <table>
             <tr>
-              <td><%= image_tag @landing_pictures[2].try(:logo).try(:url), style: 'height: 50%'  %></td>
+              <td><%= link_to image_tag(@landing_pictures[2].try(:logo).try(:url), style: 'height: 50%' ),
+                "/items?landing_picture_id=#{@landing_pictures[2].id}"
+                %></td>
             </tr>
             <tr>
-              <td><%= image_tag @landing_pictures[3].try(:logo).try(:url), style: 'height: 50%'  %></td>
+              <td><%= link_to image_tag(@landing_pictures[3].try(:logo).try(:url), style: 'height: 50%' ),
+                "/items?landing_picture_id=#{@landing_pictures[3].id}"
+                %></td>
             </tr>
           </table>
         </td>

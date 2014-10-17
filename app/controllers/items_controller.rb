@@ -3,7 +3,9 @@ class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :edit, :update, :destroy, :admin_show]
 
   def index
-    @items = Item.all
+    @items = Item
+    @items = @items.where('landing_picture_id = ?', params[:landing_picture_id]) if params[:landing_picture_id]
+
     render layout: false
   end
 
@@ -47,6 +49,6 @@ class ItemsController < ApplicationController
     end
 
     def item_params
-      params.require(:item).permit(:logo, :title, :introduction)
+      params.require(:item).permit(:logo, :title, :introduction, :landing_picture_id)
     end
 end

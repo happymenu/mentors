@@ -1,7 +1,14 @@
 <%= form_for(@item) do |f| %>
+  请选择 所属的分类：
+  <%= f.collection_select :landing_picture_id , LandingPicture.all, :id, :name %>
   <div class="field">
     <%= f.label :logo %><br>
-    当前图片: <%= image_tag @item.logo.url, :style => 'height: 200px' %>
+    <% if @item.logo.present? %>
+    当前图片:
+    <%= image_tag @item.logo.url, :style => 'height: 200px' %>
+    <% else %>
+    当前无图片
+    <% end %>
     <%= f.file_field :logo %>
   </div>
   <div class="field">

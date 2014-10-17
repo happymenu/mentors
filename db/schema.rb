@@ -1,4 +1,4 @@
-# -*- encoding : utf-8 -*-
+# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141017103156) do
+ActiveRecord::Schema.define(version: 20141017120245) do
 
   create_table "categories", force: true do |t|
     t.string   "name"
@@ -32,11 +32,12 @@ ActiveRecord::Schema.define(version: 20141017103156) do
   end
 
   create_table "items", force: true do |t|
-    t.string   "logo",         default: ""
-    t.string   "title",        default: ""
+    t.string   "logo",               default: ""
+    t.string   "title",              default: ""
     t.text     "introduction"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "landing_picture_id"
   end
 
   create_table "landing_pictures", force: true do |t|
