@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @landing_picture.name %>
+</p>
+
+<p>
+  <strong>Logo:</strong>
+  <%= @landing_picture.logo %>
+</p>
+
+<p>
+  <strong>Landing picture type:</strong>
+  <%= @landing_picture.landing_picture_type %>
+</p>
+
+<%= link_to 'Edit', edit_landing_picture_path(@landing_picture) %> |
+<%= link_to 'Back', landing_pictures_path %>

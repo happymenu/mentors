@@ -1,0 +1,19 @@
+<%= form_for(@landing_picture) do |f| %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :logo %><br>
+    当前图片：  <%= image_tag @landing_picture.logo.url, :style => 'height: 200px' %>
+    <%= f.file_field :logo %>
+  </div>
+  <div class="field">
+    <%= f.label :landing_picture_type %><br>
+    <%= f.text_field :landing_picture_type %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

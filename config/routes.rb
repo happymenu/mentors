@@ -1,7 +1,12 @@
 # -*- encoding : utf-8 -*-
 Rails.application.routes.draw do
-  resources :scores
+  resources :landing_pictures do
+    collection do
+      get :admin_index
+    end
+  end
 
+  resources :scores
   resources :comments
 
   resources :items do
@@ -13,7 +18,7 @@ Rails.application.routes.draw do
     end
   end
 
-  root 'users#welcome'
+  root 'items#index'
   resources :user_account_records
 
   devise_for :users
