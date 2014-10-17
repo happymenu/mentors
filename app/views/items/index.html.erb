@@ -1,11 +1,16 @@
-<table class='table table-hover table-striped'>
+<table class='table table-hover table-striped' style='width:100%'>
   <tbody>
     <% @items.each do |item| %>
-      <tr>
-        <td><%= image_tag item.logo, :style=> 'height:150px' %></td>
-        <td><%= item.title %></td>
-        <td><%= item.introduction %></td>
-        <td><%= link_to '点赞！', '' %></td>
+      <tr style='height: 162px; border: 1px solid #5bb7dc;'>
+        <td><%= image_tag item.logo, :style=> 'height:128px' %></td>
+        <td>
+          <div style='font-size: 20px; height: 40px'>《<%= item.title %>》</div>
+          <div style='color:#908e8f; height: 92px'><%= item.introduction %></div>
+        </td>
+        <td style='text-align:center'>
+          <%= link_to image_tag('thumbup.jpg'), '' %>
+          <div><%= item.scores.count %> 人</div>
+        </td>
       </tr>
     <% end %>
   </tbody>
