@@ -1,5 +1,11 @@
 # -*- encoding : utf-8 -*-
 Rails.application.routes.draw do
+  resources :scores
+
+  resources :comments
+
+  resources :items
+
   root 'users#welcome'
   resources :user_account_records
 
