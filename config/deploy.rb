@@ -4,18 +4,18 @@ load 'deploy/assets'
 SSH_USER = 'root'
 ssh_options[:port] = 1080
 set :rake, "bundle exec rake"
-set :application, "Happy Gift"
+set :application, "zrmentros"
 set :repository, "."
 set :scm, :none
 set :deploy_via, :copy
-server = "happygift.cc"
+server = "106.186.19.250"
 
 role :web, server
 role :app, server
 role :db,  server, :primary => true
 role :db,  server
 
-set :deploy_to, "/opt/app/siwei/happygift.cc"
+set :deploy_to, "/opt/app/siwei/mentors"
 default_run_options[:pty] = true
 
 # change to your username
