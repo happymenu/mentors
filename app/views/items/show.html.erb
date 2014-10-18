@@ -1,22 +1,36 @@
-<p>
-  当前图片: <%= image_tag @item.logo.url, :style => 'height: 200px' %><br/>
-</p>
+<div style='width: 98%; padding: 25px; border: 1px solid red'>
+  <div class='pictures' style='float:right; border: 2px solid blue'>
+    <%= image_tag @item.logo.url, :style => 'height: 325px; width: 230px' %>
+  </div>
+  <div class='title' style='float:left; font-size: 36px; line-height: 30px'>
+    《<%= @item.title %>》
+  </div>
+  <div class='introduction' style='float:left; font-size: 24px; line-height: 30px; clear: left'>
+    <%= @item.introduction %>
+  </div>
 
-<p>
-  <strong>Title:</strong>
-  <%= @item.title %>
-</p>
+  <div style='clear:both'></div>
+  <div style='margin: 0 auto; width: 20%; text-align:center;'>
+    <%= link_to image_tag('thumbup.jpg'), '' %>
+    <div><%= @item.scores.count %> </div>
+  </div>
 
-<p>
-  <strong>Introduction:</strong>
-  <%= @item.introduction %>
-</p>
-
-<%= link_to '评论', '' %>,
-<%= link_to "点赞(目前#{@item.scores.count}个赞)", '' %>
-<h5>评论列表</h5>
-
-<%= @item.comments.each do |comment|%>
-  <%=  comment.body %> -- <br/>
-<% end %>
-<%= render 'comments/form' %>
+  <div style='width: 100%; border: 1px solid green; color: #696969; background-color: #f1f1f1; margin-top: 50px'>
+    <div style='float: right; font-size: 24px'>
+    <% if @item.comments.count > 0 %>
+      <p>已有<span style='color: #c83929'><%= @item.comments.count %></span>条评论</p>
+    <% else %>
+      <p>其他人还没评论，赶紧抢沙发！</p>
+    <% end %>
+    </div>
+    <div style='clear:both'></div>
+    <%= render 'comments/form' %>
+    <div style='margin: 0 auto; font-size: 34px; width: 300px; text-align:center'>
+      <span style='color: #b3b4b8'>&#9660; </span> <br/>
+      最热评论
+    </div>
+    <%= @item.comments.each do |comment|%>
+      <%=  comment.body %>
+    <% end %>
+  </div>
+</div>
