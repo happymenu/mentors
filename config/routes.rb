@@ -1,5 +1,7 @@
 # -*- encoding : utf-8 -*-
 Rails.application.routes.draw do
+  root 'landing_pictures#index'
+  resources :user_account_records
   resources :landing_pictures do
     collection do
       get :admin_index
@@ -18,8 +20,6 @@ Rails.application.routes.draw do
     end
   end
 
-  root 'items#index'
-  resources :user_account_records
 
   devise_for :users
   resources :users do

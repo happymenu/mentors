@@ -1,9 +1,9 @@
-<h1>Listing landing_pictures</h1>
+<h1>首页的分类大图标列表</h1>
 
-<table>
+<table class='table table-hover table-striped'>
   <thead>
     <tr>
-      <th>Name</th>
+      <th>名字（基本没用）</th>
       <th>Logo</th>
       <th colspan="3"></th>
     </tr>
@@ -14,8 +14,8 @@
       <tr>
         <td><%= landing_picture.name %></td>
         <td><%= image_tag landing_picture.logo , :style => 'height: 200px' %></td>
-        <td><%= link_to 'Edit', edit_landing_picture_path(landing_picture) %></td>
-        <td><%= link_to 'Destroy', landing_picture, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to '编辑', edit_landing_picture_path(landing_picture) , class: 'btn btn-primary'%></td>
+        <td><%= link_to '删除', landing_picture, method: :delete, data: { confirm: 'Are you sure?' } , class: 'btn btn-danger'%></td>
       </tr>
     <% end %>
   </tbody>
@@ -23,4 +23,4 @@
 
 <br>
 
-<%= link_to 'New Landing picture', new_landing_picture_path %>
+<%= link_to '新建', new_landing_picture_path, class: 'btn btn-default' %>

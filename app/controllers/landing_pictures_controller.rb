@@ -29,10 +29,12 @@ class LandingPicturesController < ApplicationController
 
   def update
     @landing_picture.update(landing_picture_params)
+    redirect_to :back, notice: '操作成功'
   end
 
   def destroy
     @landing_picture.destroy
+    redirect_to :back, notice: '操作成功'
   end
 
   private

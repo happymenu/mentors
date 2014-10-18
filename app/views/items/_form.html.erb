@@ -4,7 +4,7 @@
   <div class="field">
     <%= f.label :logo %><br>
     <% if @item.logo.present? %>
-    当前图片:
+    当前图片: (注意严格遵循尺寸）
     <%= image_tag @item.logo.url, :style => 'height: 200px' %>
     <% else %>
     当前无图片
@@ -13,11 +13,11 @@
   </div>
   <div class="field">
     标题：
-    <%= f.text_field :title %>
+    <%= f.text_field :title, :class => 'form-control' %>
   </div>
   <div class="field">
     正文：
-    <%= f.text_area :introduction %>
+    <%= f.text_area :introduction, :class => 'form-control' %>
   </div>
   <div class="actions">
     <%= f.submit '确定'%>
