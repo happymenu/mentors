@@ -1,15 +1,20 @@
 <table class='table table-hover table-striped' style='width:100%'>
   <tbody>
     <% @items.each do |item| %>
-      <tr style='height: 162px; border: 1px solid #5bb7dc;'>
-        <td><%= image_tag item.logo, :style=> 'height:128px' %></td>
-        <td>
-          <div style='font-size: 20px; height: 40px'>《<%= item.title %>》</div>
-          <div style='color:#908e8f; height: 92px'><%= item.introduction %></div>
+      <tr style='height: 162px; border: 2px solid #5bb7dc;' >
+        <td style='width: 23%' onclick='location.href="/items/<%=item.id%>"'><%= image_tag item.logo, :style=> 'height:128px' %></td>
+        <td onclick='location.href="/items/<%=item.id%>"'>
+          <div style='font-size: 28px; font-weight: bold; height: 40px'>《<%= item.title %>》</div>
+          <div style='color:#908e8f; height: 92px; font-size: 24px'><%= item.introduction %></div>
         </td>
-        <td style='text-align:center'>
+        <td style='text-align:center; width: 18%'>
           <%= link_to image_tag('thumbup.jpg'), '' %>
           <div><%= item.scores.count %> 人</div>
+        </td>
+      </tr>
+      <tr>
+        <td colspan=3>
+          <hr style='border-color: #5bb7dc; border-width:2px'/>
         </td>
       </tr>
     <% end %>
