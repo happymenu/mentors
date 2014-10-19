@@ -8,7 +8,8 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :scores
+  resources :scores do
+  end
   resources :comments
 
   resources :items do

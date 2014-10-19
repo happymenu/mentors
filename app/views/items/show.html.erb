@@ -12,8 +12,13 @@
 
   <div style='clear:both'></div>
   <div style='margin: 0 auto; width: 20%; text-align:center; margin-top: 20px'>
-    <%= link_to image_tag('thumbup.jpg'), '' %>
-    <div style='font-size: 20px'><%= @item.scores.count %> </div>
+    <% if @item.not_thumbed_up_by_current_ip request.remote_ip, @item.id %>
+      <%= link_to image_tag('thumbup.jpg'), "/scores?item_id=#{@item.id}", method: 'post' %>
+      <div style='font-size: 20px'><%= @item.scores.count %> </div>
+    <% else %>
+      <%= image_tag('thumbup.jpg') %>
+      <div style='font-size: 20px'><%= @item.scores.count %>(已赞) </div>
+    <% end %>
   </div>
 
   <div style='width: 100%; color: #696969; background-color: #f1f1f1; margin-top: 50px'>

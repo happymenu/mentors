@@ -17,7 +17,7 @@ class ScoresController < ApplicationController
   end
 
   def create
-    @score = Score.new(score_params)
+    @score = Score.new(item_id: params[:item_id], ip: request.remote_ip)
     @score.save
     redirect_to :back, notice: '操作成功'
   end
