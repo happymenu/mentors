@@ -38,3 +38,5 @@ config/log4r.yml
 nohup.out
 config/thin.yml
 public/uploads/
+config/deploy.rb
+
