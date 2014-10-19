@@ -33,10 +33,17 @@
     <%= render 'comments/form' %>
     <div style='margin: 0 auto; font-size: 20px; width: 300px; text-align:center'>
       <span style='font-size: 50px; line-height: 30px;color: #b3b4b8'>&#9660;</span><br/>
-      最热评论
+    最新评论
     </div>
-    <% @item.comments.each do |comment|%>
-      <%=  comment.body %>, 由网友：<%= comment.ip %> 发表于 <%= comment.created_at %>
+
+    <table style='font-size:20px; width: 100%'>
+    <% @item.comments.order('created_at desc').limit(20).each do |comment|%>
+      <tr>
+        <td style='width:60%'><%= comment.body %></td>
+        <td><%= comment.ip %></td>
+        <td style='width:10%'><%= comment.created_at.strftime('%m-%d') %></td>
+      </tr>
     <% end %>
+    </table>
   </div>
 </div>

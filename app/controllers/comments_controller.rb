@@ -18,6 +18,7 @@ class CommentsController < ApplicationController
 
   def create
     @comment = Comment.new(comment_params)
+    @comment.ip = request.remote_ip
     @comment.save
     redirect_to :back, notice: '操作成功'
   end
