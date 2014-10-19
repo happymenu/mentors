@@ -2,20 +2,20 @@
   <tbody>
     <% @items.each do |item| %>
       <tr style='height: 162px; border: 2px solid #5bb7dc;' >
-        <td style='width: 150px' onclick='location.href="/items/<%=item.id%>"'><%= image_tag item.logo, :style=> 'height:128px' %></td>
+        <td style='width: 150px; padding-left: 25px' onclick='location.href="/items/<%=item.id%>"'><%= image_tag item.logo, :style=> 'height:128px' %></td>
         <td onclick='location.href="/items/<%=item.id%>"'>
           <div style='font-size: 32px; font-weight: bold; height: 40px'>《<%= truncate item.title, :length => 18 %>》</div>
           <div style='color:#908e8f; height: 92px; font-size: 28px'><%= truncate item.introduction,
             :length => 70, :omission => '..>>' %></div>
         </td>
-        <td style='text-align:center; width: 10%'>
-          <%= link_to image_tag('thumbup.jpg'), '' %>
-          <div><%= item.scores.count %> 人</div>
+        <td style='text-align:center; width: 10%; padding-right: 25px'>
+          <%= link_to image_tag('thumbup.jpg', style: 'width: 90px; height: 90px') %>
+          <div style='font-size:40px'><%= item.scores.count %> 人</div>
         </td>
       </tr>
       <tr>
         <td colspan=3>
-          <hr style='border-color: #5bb7dc; border-width:2px'/>
+          <hr style='border-color: #58b9e3; border-width: 0 0 4px 0'/>
         </td>
       </tr>
     <% end %>
