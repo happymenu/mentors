@@ -21,22 +21,21 @@
 <table class='table table-hover table-striped' style='width:100%'>
   <tbody>
     <% @items.each do |item| %>
-      <tr style='height: 20%; border: 2px solid #5bb7dc;' >
+      <tr style='height: 15%; border: 2px solid #5bb7dc;' >
         <td style='width: 20%; height: ; padding: 2%;
           background-image:  url("<%= item.try(:logo).try(:url) %>")'
           onclick='location.href="/items/<%=item.id%>"'
           class='item_logo'
           >
-          <%# image_tag item.logo, :style=> 'height: ' %></td>
         <td onclick='location.href="/items/<%=item.id%>"'
           style='padding: 1%'
           >
-          <div style='font-size: 22px; font-weight: bold; height: 32px'>《<%= truncate item.title, :length => 18 %>》</div>
-          <div style='color:#908e8f; height: 92px; font-size: 18px'><%= truncate item.introduction,
+          <div style='font-size: 18px; font-weight: bold; line-height: 24px; height: 30px'>《<%= truncate item.title, :length => 18 %>》</div>
+          <div style='color:#908e8f; height: ; font-size: 16px'><%= truncate item.introduction,
             :length => 40, :omission => '..>>' %></div>
         </td>
-        <td style='text-align:center; width: 20%; '>
-          <%= link_to image_tag('thumbup.jpg', style: 'width: 100%') %>
+        <td style='text-align:center; width: 16%; '>
+          <%= link_to image_tag('thumbup.jpg', style: 'width: 60%') %>
           <div style='font-size: 18px'><%= item.scores.count %> 票</div>
         </td>
       </tr>
