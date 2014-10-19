@@ -6,7 +6,7 @@ class ItemsController < ApplicationController
     @items = Item
     @items = @items.where('landing_picture_id = ?', params[:landing_picture_id]) if params[:landing_picture_id]
     @items = @items.all
-    render layout: false
+    render layout: 'mobile'
   end
 
   def admin_index
@@ -14,7 +14,7 @@ class ItemsController < ApplicationController
   end
 
   def show
-    render layout: false
+    render layout: 'mobile'
   end
 
   def admin_show
