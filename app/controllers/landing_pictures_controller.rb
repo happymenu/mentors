@@ -4,7 +4,7 @@ class LandingPicturesController < ApplicationController
 
   def index
     @landing_pictures = LandingPicture.first(4)
-    render layout: 'mobile'
+    render layout: false
   end
 
   def admin_index
