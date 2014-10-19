@@ -2,40 +2,51 @@
 <title>
   智人巨变站
 </title>
-
-<script id="allmobilize" charset="utf-8" src="http://a.yunshipei.com/38481664c3057945356711f1d95bd2a3/allmobilize.min.js"></script>
-<meta http-equiv="Cache-Control" content="no-siteapp" /><link rel="alternate" media="handheld" href="#" />
+<style>
+.logo{
+  background-position: center center;
+  background-size: cover;
+}
+</style>
 </head>
 <body>
-    <table>
+    <table style='height: 100%; width: 100%'>
       <tr>
-        <td>
+        <td style='width: 50%'>
           <!-- 左侧的两个图片 -->
-          <table style='border-spacing: 0px'>
+          <table style='border-spacing: 0px; height: 100%; width: 100%'>
             <tr>
-              <td><%= link_to image_tag(@landing_pictures[0].try(:logo).try(:url), style: 'height: 50%' ),
-                "/items?landing_picture_id=#{@landing_pictures[0].id}"
-                %></td>
+              <td style="background-image:  url('<%= @landing_pictures[0].try(:logo).try(:url) %>') ;
+                border: 1px solid red; height: 35%"
+                class='logo'
+                onclick="location.href='<%= "/items?landing_picture_id=#{@landing_pictures[0].id}" %>'" >
+              </td>
             </tr>
-            <tr>
-              <td><%= link_to image_tag(@landing_pictures[1].try(:logo).try(:url), style: 'height: 50%' ),
-                "/items?landing_picture_id=#{@landing_pictures[1].id}"
-                %></td>
+            <tr style='height: 100%'>
+              <td style="background-image:  url('<%= @landing_pictures[1].try(:logo).try(:url) %>') ;
+                border: 1px solid blue; height: 65%"
+                class='logo'
+                onclick="location.href='<%= "/items?landing_picture_id=#{@landing_pictures[1].id}" %>'" >
+              </td>
             </tr>
           </table>
         </td>
         <td>
           <!-- 右侧的两个图片 -->
-          <table style='border-spacing: 0px'>
+          <table style='border-spacing: 0px; height: 100%; width: 100%'>
             <tr>
-              <td><%= link_to image_tag(@landing_pictures[2].try(:logo).try(:url), style: 'height: 50%' ),
-                "/items?landing_picture_id=#{@landing_pictures[2].id}"
-                %></td>
+              <td style="background-image:  url('<%= @landing_pictures[2].try(:logo).try(:url) %>') ;
+                border: 1px solid red; height: 50%"
+                class='logo'
+                onclick="location.href='<%= "/items?landing_picture_id=#{@landing_pictures[2].id}" %>'" >
+              </td>
             </tr>
-            <tr>
-              <td><%= link_to image_tag(@landing_pictures[3].try(:logo).try(:url), style: 'height: 50%' ),
-                "/items?landing_picture_id=#{@landing_pictures[3].id}"
-                %></td>
+            <tr style='height: 100%'>
+              <td style="background-image:  url('<%= @landing_pictures[3].try(:logo).try(:url) %>') ;
+                border: 1px solid blue; height: 50%"
+                class='logo'
+                onclick="location.href='<%= "/items?landing_picture_id=#{@landing_pictures[3].id}" %>'" >
+              </td>
             </tr>
           </table>
         </td>
