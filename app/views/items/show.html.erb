@@ -35,8 +35,8 @@
       <span style='font-size: 50px; line-height: 30px;color: #b3b4b8'>&#9660;</span><br/>
       最热评论
     </div>
-    <%= @item.comments.each do |comment|%>
-      <%=  comment.body %>
+    <% @item.comments.each do |comment|%>
+      <%=  comment.body %>, 由网友：<%= comment.ip %> 发表于 <%= comment.created_at %>
     <% end %>
   </div>
 </div>
