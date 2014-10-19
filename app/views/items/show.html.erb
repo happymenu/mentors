@@ -38,9 +38,12 @@
 
     <table style='font-size:20px; width: 100%'>
     <% @item.comments.order('created_at desc').limit(20).each do |comment|%>
+      <tr >
+        <td colspan=3><hr style='color:#cac8c9; border: 1px 0 0 0'/></td>
+      </tr>
       <tr>
-        <td style='width:%'><%= comment.body %></td>
-        <td style='width:15%'><%= comment.ip %></td>
+        <td style='width:;word-break:break-all;'><%= comment.body %></td>
+        <td style='width:15%'>某网友</td>
         <td style='width:15%'><%= comment.created_at.strftime('%m-%d') %></td>
       </tr>
     <% end %>
