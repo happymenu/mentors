@@ -1,6 +1,7 @@
 # -*- encoding : utf-8 -*-
 class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :edit, :update, :destroy, :admin_show, :manage_comments, :manage_thumb_ups]
+  before_action :authenticate_user!, except: [:index, :show]
 
   def index
     @items = Item
@@ -35,7 +36,7 @@ class ItemsController < ApplicationController
   def create
     @item = Item.new(item_params)
     @item.save
-    redirect_to :back, notice: '操作成功'
+    redirect_to edit_item_path(@item), notice: '操作成功'
   end
 
   def update

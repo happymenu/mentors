@@ -1,25 +1,42 @@
 <%= form_for(@item) do |f| %>
-  请选择 所属的分类：
-  <%= f.collection_select :landing_picture_id , LandingPicture.all, :id, :name %>
-  <div class="field">
-    <%= f.label :logo, "LOGO,会显示在作品列表中" %><br>
+<table class='table table-hover table-striped'>
+  <tr>
+    <td style='width: 200px'>
+      请选择 所属的分类：
+    </td>
+    <td>
+      <%= f.collection_select :landing_picture_id , LandingPicture.all, :id, :name %>
+    </td>
+  </tr>
+  <tr>
+    <td>LOGO(会显示在作品列表中)</td>
+    <td>
     <% if @item.logo.present? %>
-    当前LOGO: (注意严格遵循尺寸）
+    当前LOGO: (注意严格遵循尺寸） <br/>
     <%= image_tag @item.logo.url, :style => 'height: 200px' %>
     <% else %>
     当前无LOGO
     <% end %>
     <%= f.file_field :logo %>
-  </div>
-  <div class="field">
-    标题：
-    <%= f.text_field :title, :class => 'form-control' %>
-  </div>
-  <div class="field">
-    正文：
-    <%= f.cktext_area :introduction%>
-  </div>
-  <div class="actions">
-    <%= f.submit '确定'%>
-  </div>
+    </td>
+  </tr>
+  <tr>
+    <td>标题(会显示在作品列表中) </td>
+    <td> <%= f.text_field :title, :class => 'form-control' %> </td>
+  </tr>
+  <tr>
+    <td colspan=2>
+      正文：
+      <%= f.cktext_area :introduction%>
+    </td>
+  </tr>
+  <tr>
+    <td colspan=2 style='text-align:center'>
+      <%= f.submit '确定', class: 'btn btn-primary'%> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <%= link_to '返回', "/items/admin_index", class: 'btn btn-default' %>
+    </td>
+  </tr>
+</table>
 <% end %>
+<br/>
+<br/>
