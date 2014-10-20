@@ -16,6 +16,8 @@ Rails.application.routes.draw do
   resources :items do
     member do
       get :admin_show
+      get :manage_comments
+      get :manage_thumb_ups
     end
     collection do
       get :admin_index

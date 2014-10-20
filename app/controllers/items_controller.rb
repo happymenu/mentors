@@ -1,6 +1,6 @@
 # -*- encoding : utf-8 -*-
 class ItemsController < ApplicationController
-  before_action :set_item, only: [:show, :edit, :update, :destroy, :admin_show]
+  before_action :set_item, only: [:show, :edit, :update, :destroy, :admin_show, :manage_comments, :manage_thumb_ups]
 
   def index
     @items = Item
@@ -10,7 +10,7 @@ class ItemsController < ApplicationController
   end
 
   def admin_index
-    @items = Item.order('created_at desc').page(params[:page]).per(2)
+    @items = Item.order('created_at desc').page(params[:page]).per(6)
   end
 
   def show
@@ -20,6 +20,11 @@ class ItemsController < ApplicationController
   def admin_show
   end
 
+  def manage_comments
+  end
+
+  def manage_thumb_ups
+  end
   def new
     @item = Item.new
   end

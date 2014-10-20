@@ -1,0 +1,23 @@
+<h3><%= @item.title %> 的点赞来源</h3>
+<%= image_tag @item.logo, style: 'width: 300px' %>
+<table class='table table-hover table-striped'>
+  <tr style='text-align: center'>
+    <th style="width: 50px"></th>
+    <th style='width: 100px'>IP </th>
+    <th style='width: 150px'>时间</th>
+    <th style='width: 150px'>操作</th>
+  </tr>
+  <% @item.scores.order('created_at desc').each_with_index do |score, index| %>
+  <tr>
+    <td><%= index + 1 %></td>
+    <td>
+      <%= score.ip %>
+    </td>
+    <td>
+      <%= score.created_at.strftime('%Y-%m-%d %H:%M:%S') %>
+    </td>
+    <td>
+    <%= link_to '删除', score, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %></td>
+  </tr>
+  <% end %>
+</table>
