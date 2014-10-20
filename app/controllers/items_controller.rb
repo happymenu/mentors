@@ -10,7 +10,7 @@ class ItemsController < ApplicationController
   end
 
   def admin_index
-    @items = Item.all
+    @items = Item.order('created_at desc').page(params[:page]).per(2)
   end
 
   def show
