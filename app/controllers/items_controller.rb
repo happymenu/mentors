@@ -6,7 +6,7 @@ class ItemsController < ApplicationController
   def index
     @items = Item
     @items = @items.where('landing_picture_id = ?', params[:landing_picture_id]) if params[:landing_picture_id]
-    @items = @items.all
+    @items = @items.order('created_at desc')
     render layout: 'mobile'
   end
 
