@@ -2,7 +2,7 @@
 <%= form_for(@comment) do |f| %>
   <%= hidden_field_tag "comment[item_id]", @item.id %>
   <div class="actions" style='margin: 10px'>
-    <%= f.submit '我写好了', :style=> 'font-size: 24px' %>
+    <%= f.submit '我写好了', :style=> 'font-size: 20px' %>
   </div>
   <%= f.text_area :body, :placeholder => '请输入评论内容', :style=> 'width: 96%; height: 150px;
   font-size: 20px' %>
