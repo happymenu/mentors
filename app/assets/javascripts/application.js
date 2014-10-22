@@ -7,6 +7,7 @@
 
 
 // from http://stackoverflow.com/questions/486896/adding-a-parameter-to-the-url-with-javascript
+//
 function merge_parameter_and_refresh(key, value) {
         key = escape(key); value = escape(value);
 
