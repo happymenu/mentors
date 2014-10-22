@@ -6,14 +6,14 @@ class ItemsController < ApplicationController
   def index
     @items = Item
     @items = @items.where('landing_picture_id = ?', params[:landing_picture_id]) if params[:landing_picture_id]
-    @items = @items.order('created_at desc')
+    @items = @items.order('position')
     render layout: 'mobile'
   end
 
   def admin_index
     @items = Item
     @items = @items.where 'landing_picture_id = ?',(params[:landing_picture_id] || LandingPicture.first.try(:id))
-    @items = @items.order('created_at desc').page(params[:page]).per(6)
+    @items = @items.order('position').page(params[:page]).per(6)
   end
 
   def show
