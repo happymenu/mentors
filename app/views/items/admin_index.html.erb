@@ -1,5 +1,7 @@
 <h1>作品列表   <%= link_to '进入手机网站', "/items/" %></h1>
 
+所属分类:  <%= collection_select nil, 'landing_picture_id', LandingPicture.all,  :id, :name %>
+
 <%= paginate @items %>
 <table class='table table-hover table-striped'>
   <thead>

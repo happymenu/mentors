@@ -12,7 +12,7 @@
     <td>LOGO(会显示在作品列表中)</td>
     <td>
     <% if @item.logo.present? %>
-    当前LOGO: (注意严格遵循尺寸） <br/>
+    当前LOGO: (建议： 宽，高都是130px） <br/>
     <%= image_tag @item.logo.url, :style => 'height: 200px' %>
     <% else %>
     当前无LOGO
@@ -22,11 +22,20 @@
   </tr>
   <tr>
     <td>标题(会显示在作品列表中) </td>
-    <td> <%= f.text_field :title, :class => 'form-control' %> </td>
+    <td> <%= f.text_field :title, :class => 'form-control' ,placeholder: '例如: 《北京，是一座希望之城》'%>  </td>
   </tr>
   <tr>
     <td colspan=2>
-      正文：
+      正文：<br/>
+      友情提示:(如果发现在手机上的显示内容与在电脑上不一致时)<br/>
+      1. 确保正文的源代码中不要有&lt;pre> 标签<br/>
+      2. 不要直接从其他网页复制内容,然后粘贴到下面. 要先把内容从源目标网站中复制,然后粘贴到一个纯文本编辑器(txt, 记事本)中,然后
+      再粘贴到这里.再编辑它的换行等样式.<br/>
+      3. 如果想输入华丽丽的分隔符, 请点击一下目标位置,然后点击"插入水平线"
+      <span class="cke_button_icon "
+      style="float:none;background-image:url(/assets/ckeditor/plugins/icons.png?t=E5OD);background-position:0 -888px;background-size:auto;">&nbsp;</span>
+      这个图标.<br/>
+      如果还有问题,请直接联系 : 技术同学( 135 2222 3382 思维)
       <%= f.cktext_area :introduction%>
     </td>
   </tr>
