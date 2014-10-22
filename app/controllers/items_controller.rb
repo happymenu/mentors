@@ -11,7 +11,9 @@ class ItemsController < ApplicationController
   end
 
   def admin_index
-    @items = Item.order('created_at desc').page(params[:page]).per(6)
+    @items = Item
+    @items = @items.where 'landing_picture_id = ?',(params[:landing_picture_id] || LandingPicture.first.try(:id))
+    @items = @items.order('created_at desc').page(params[:page]).per(6)
   end
 
   def show

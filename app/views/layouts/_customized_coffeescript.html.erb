@@ -1,0 +1,63 @@
+<%= coffee_script_tag do %>
+
+@make_table_sortable = (table_css_selector)->
+  this_table = $(table_css_selector)
+  base_index = this_table.attr('base_index') || 0
+  entity_class = this_table.attr('entity_class')
+  this_table.sortable({
+    axis: 'y',
+    dropOnEmpty: false,
+    # handle: '.handle',
+    cursor: 'crosshair',
+    items: 'tbody tr',
+    opacity: 0.4,
+    scroll: true,
+    update: ->
+      $.ajax({
+        type: 'put',
+        data: "#{this_table.sortable('serialize')}&entity_class=#{entity_class}&base_index=#{base_index}",
+        dataType: 'json',
+        beforeSend: (xhr) ->
+          xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))
+        ,
+        complete: (request) ->
+          $().toastmessage('showSuccessToast', '排序成功');
+        ,
+        url: "/commons/sort"
+      })
+  })
+
+
+@validate_form = (form_selector, options) ->
+  default_options =  {
+    errorPlacement: (error, element) ->
+      #if (element.is(":radio"))
+      #  error.appendTo( element.parent().next().next() )
+      #else
+      if ( element.is(":checkbox") )
+        error.appendTo ( element.next() )
+      else
+        element.addClass('error')
+        error.appendTo( element.parent().next() )
+    ,
+    submitHandler: (form) ->
+      form.submit()
+    ,
+    success: (label) ->
+      label.html("&nbsp;").addClass("checked");
+    ,
+    highlight: (element, errorClass) ->
+      $(element).parent().next().find("." + errorClass).removeClass("checked");
+  }
+  options = $.extend(default_options, options)
+  $(form_selector).validate(options)
+
+$ ->
+  # 让表格可以排序
+  make_table_sortable('table.sortable')
+
+  # 让表单的验证信息可以有地方显示
+  $('form table tr').each( ->
+    $(this).append('<td></td>') if $(this).find('td').size() == 2
+  )
+<% end %>
