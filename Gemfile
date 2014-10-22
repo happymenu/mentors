@@ -15,7 +15,8 @@ gem 'thin', '1.6.2'
 gem 'carrierwave', '0.9.0'
 gem 'mini_magick', '3.6.0'
 gem 'ckeditor', '4.1.0'
-gem 'kaminari'
+gem 'kaminari', '0.16.1'
+gem 'jquery-ui-rails', '4.0.5'
 
 group :test, :development do
   gem 'capistrano', '2.12.0'
