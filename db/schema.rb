@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141022073541) do
+ActiveRecord::Schema.define(version: 20141024024939) do
 
   create_table "categories", force: true do |t|
     t.string   "name"
@@ -55,6 +55,7 @@ ActiveRecord::Schema.define(version: 20141022073541) do
     t.datetime "updated_at"
     t.integer  "landing_picture_id"
     t.integer  "position",           default: 0
+    t.text     "brief_introduction"
   end
 
   create_table "landing_pictures", force: true do |t|
@@ -70,6 +71,13 @@ ActiveRecord::Schema.define(version: 20141022073541) do
     t.string   "ip",         default: ""
     t.string   "im_id",      default: ""
     t.string   "im_type",    default: ""
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "system_settings", force: true do |t|
+    t.string   "site_name",       default: ""
+    t.integer  "page_cache_time", default: 0
     t.datetime "created_at"
     t.datetime "updated_at"
   end

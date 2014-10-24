@@ -21,7 +21,7 @@
       <tr id='ids_<%= item.id %>'>
         <td><%= link_to image_tag(item.logo.url, :style => 'height: 150px'), item %></td>
         <td><%= item.title %>, landing_picture_id: <%= item.landing_picture_id %></td>
-        <td><%= raw item.introduction %></td>
+        <td><%= raw item.brief_introduction %></td>
         <td>
           <%= link_to '预览', "/items/#{item.id}", class: 'btn btn-default' %>
           <%= link_to '编辑', edit_item_path(item), class: 'btn btn-primary' %>

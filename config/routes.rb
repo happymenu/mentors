@@ -1,5 +1,7 @@
 # -*- encoding : utf-8 -*-
 Rails.application.routes.draw do
+  resources :system_settings
+
   mount Ckeditor::Engine => '/ckeditor'
   root 'landing_pictures#index'
   resources :user_account_records
