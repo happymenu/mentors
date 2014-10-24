@@ -3,6 +3,8 @@ class LandingPicturesController < ApplicationController
   before_action :set_landing_picture, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, except: [:index]
 
+  caches_page :index
+
   def index
     @landing_pictures = LandingPicture.first(4)
     render layout: false
@@ -25,16 +27,19 @@ class LandingPicturesController < ApplicationController
   def create
     @landing_picture = LandingPicture.new(landing_picture_params)
     @landing_picture.save
+    expire_page action: 'index'
     redirect_to :back, notice: '操作成功'
   end
 
   def update
     @landing_picture.update(landing_picture_params)
+    expire_page action: 'index'
     redirect_to :back, notice: '操作成功'
   end
 
   def destroy
     @landing_picture.destroy
+    expire_page action: 'index'
     redirect_to :back, notice: '操作成功'
   end
 

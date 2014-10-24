@@ -2,9 +2,10 @@
 class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :edit, :update, :destroy, :admin_show, :manage_comments, :manage_thumb_ups]
   before_action :authenticate_user!, except: [:index, :show]
+  caches_page :index, :show
 
   def index
-    @items = Item
+    @items = Item.includes(:scores)
     @items = @items.where('landing_picture_id = ?', params[:landing_picture_id]) if params[:landing_picture_id]
     @items = @items.order('position')
     render layout: 'mobile'
@@ -38,16 +39,22 @@ class ItemsController < ApplicationController
   def create
     @item = Item.new(item_params)
     @item.save
+    expire_page action: 'index'
+    expire_page action: 'show', id: @item.id
     redirect_to edit_item_path(@item), notice: '操作成功'
   end
 
   def update
     @item.update(item_params)
+    expire_page action: 'index'
+    expire_page action: 'show', id: @item.id
     redirect_to :back, notice: '操作成功'
   end
 
   def destroy
     @item.destroy
+    expire_page action: 'index'
+    expire_page action: 'show', id: @item.id
     redirect_to :back, notice: '操作成功'
   end
 
