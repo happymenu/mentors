@@ -1,0 +1,25 @@
+<%= form_for(@system_setting) do |f| %>
+<table class='table table-hover table-striped' style='width: 600px'>
+  <tr data-toggle="tooltip" data-placement="right" title="网站的名字">
+    <td style='widtd: 200px'>网站名字</td>
+    <td><%= f.text_field :site_name, class: 'form-control', placeholder: '例如：大咖招门徒' %></td>
+  </tr>
+  <tr data-toggle="tooltip" data-placement="right" title="对于作品列表页的缓存时间。能大幅提高页面的打开速度。">
+    <td>页面缓存时间(秒)</td>
+    <td><%= f.number_field :page_cache_time , class: 'form-control'%></td>
+  </tr>
+  <tr>
+    <td>
+      <%= f.submit '确定', class: 'btn btn-primary' %>
+    </td>
+    <td>
+      <%= link_to '返回', system_settings_path, class: 'btn btn-default' %>
+    </td>
+  </tr>
+</table>
+<% end %>
+<script>
+$('tr').tooltip({
+    placement: 'right'
+    })
+</script>

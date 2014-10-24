@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= content_for?(:title) ? yield(:title) : "智人聚变站" %></title>
+    <title><%= content_for?(:title) ? yield(:title) : SystemSetting.first.site_name %></title>
     <%= csrf_meta_tags %>
 
     <!--[if lt IE 9]>
@@ -31,12 +31,13 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="/">智人聚变站</a>
+        <a class="navbar-brand" href="/"><%= SystemSetting.first.site_name %></a>
         <div class="navbar-collapse collapse navbar-responsive-collapse">
-          <% if true # user_signed_in? %>
+          <% if user_signed_in? %>
           <ul class="nav navbar-nav">
             <li><%= link_to "分类管理", "/landing_pictures/admin_index"  %></li>
             <li><%= link_to "作品列表", "/items/admin_index"  %></li>
+            <li><%= link_to "系统设置", "/system_settings"  %></li>
           </ul>
           <ul class="nav navbar-nav" style='float:right'>
             <li><%= link_to "欢迎你：#{current_user.try :email}", "/users/#{current_user.try :id}"  %></li>
@@ -71,7 +72,7 @@
       </div><!--/row-->
 
       <footer>
-        <p> 智人聚变站 &copy; 2014</p>
+        <p> <%= SystemSetting.first.site_name %>&copy; 2014</p>
       </footer>
 
     </div> <!-- /container -->

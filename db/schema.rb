@@ -76,8 +76,8 @@ ActiveRecord::Schema.define(version: 20141024024939) do
   end
 
   create_table "system_settings", force: true do |t|
-    t.string   "site_name",       default: ""
-    t.integer  "page_cache_time", default: 0
+    t.string   "site_name",       default: "大咖招门徒"
+    t.integer  "page_cache_time", default: 60
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -1,0 +1,14 @@
+<h1>系统设置</h1>
+
+<table class='table table-hover table-striped' style='width: 400px'>
+  <tr>
+    <th style='width: 200px'>网站名字</th>
+    <td><%= @system_setting.site_name %></td>
+  </tr>
+  <tr>
+    <th>页面缓存时间</th>
+    <td><%= @system_setting.page_cache_time %></td>
+  </tr>
+</table>
+
+<%= link_to '编辑', edit_system_setting_path(@system_setting), class: 'btn btn-default' %>

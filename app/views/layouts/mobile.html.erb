@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>智人聚变站</title>
+<title><%= SystemSetting.first.site_name %></title>
 <meta charset="utf-8" />
-<meta name="apple-mobile-web-app-title" content="智人聚变站">
+<meta name="apple-mobile-web-app-title" content="<%= SystemSetting.first.site_name %>">
 <link rel="apple-touch-icon" href="http://2008mail.sina.com.cn/images/mobile/icon_touch.png">
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no"/>
@@ -17,5 +17,9 @@
 </header>
   <%= yield %>
 </body>
+
+      <footer>
+        <p> <%= SystemSetting.first.site_name %>&copy; 2014</p>
+      </footer>
 </html>
 
