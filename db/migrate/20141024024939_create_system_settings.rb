@@ -7,5 +7,6 @@ class CreateSystemSettings < ActiveRecord::Migration
 
       t.timestamps
     end
+    SystemSetting.create
   end
 end
