@@ -1,3 +1,9 @@
+<style>
+.item_logo {
+  background-position: center center;
+  background-size: cover;
+}
+</style>
 <table class='table table-hover table-striped' style='width:100%'>
   <tbody>
     <% @items.each do |item| %>
@@ -13,8 +19,8 @@
           <div style='font-size: 18px; font-weight: bold; line-height: 24px; height: 30px'>
             <%= truncate item.title, :length => 18 %></div>
           <div style='color:#908e8f; height: ; font-size: 16px'>
-            <%= truncate ActionView::Base.full_sanitizer.sanitize(item.introduction),
-            :length => 40, :omission => '..>>' %></div>
+            <%= truncate(ActionView::Base.full_sanitizer.sanitize(item.introduction),
+            :length => 40, :omission => '..>>') %></div>
         </td>
         <td style='text-align:center; width: 16%; '>
           <% if item.not_thumbed_up_by_current_ip request.remote_ip, item.id %>
