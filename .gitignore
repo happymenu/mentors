@@ -39,4 +39,4 @@ nohup.out
 config/thin.yml
 public/uploads/
 config/deploy.rb
-
+public/deploy/
