@@ -1,4 +1,5 @@
-source 'https://rubygems.org'
+#source 'https://rubygems.org'
+source 'http://ruby.taobao.org/'
 
 gem 'rails', '4.1.6'
 gem 'mysql2', '0.3.16'
@@ -18,6 +19,7 @@ gem 'mini_magick', '3.6.0'
 gem 'ckeditor', '4.1.0'
 gem 'kaminari', '0.16.1'
 gem 'jquery-ui-rails', '4.0.5'
+gem 'actionpack-page_caching'
 
 group :test, :development do
   gem 'capistrano', '2.12.0'
