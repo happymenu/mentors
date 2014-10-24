@@ -13,7 +13,7 @@ class ItemsController < ApplicationController
   def admin_index
     @items = Item
     @items = @items.where 'landing_picture_id = ?',(params[:landing_picture_id] || LandingPicture.first.try(:id))
-    @items = @items.order('position').page(params[:page]).per(6)
+    @items = @items.order('position').page(params[:page]).per(100)
   end
 
   def show
