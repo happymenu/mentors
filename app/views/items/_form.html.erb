@@ -46,6 +46,13 @@
     </td>
   </tr>
   <tr>
+    <td>本页的CSS样式（高级特性, 一般情况下不用动) </td>
+    <td>
+      <%= f.text_area :css_style, style: "width: 100%; height: 131px;", :class => 'form-control',
+        placeholder: '例如： body { background-color: pink }' %>
+  </td>
+  </tr>
+  <tr>
     <td colspan=2 style='text-align:center'>
       <%= f.submit '确定', class: 'btn btn-primary'%> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       <%= link_to '返回', "/items/admin_index", class: 'btn btn-default' %>

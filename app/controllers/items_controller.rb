@@ -45,7 +45,8 @@ class ItemsController < ApplicationController
   end
 
   def update
-    @item.update(item_params)
+    @item.update item_params
+
     expire_page action: 'index'
     expire_page action: 'show', id: @item.id
     redirect_to :back, notice: '操作成功'
@@ -64,6 +65,7 @@ class ItemsController < ApplicationController
     end
 
     def item_params
-      params.require(:item).permit :logo, :title, :introduction, :landing_picture_id, :brief_introduction
+      params.require(:item).permit :logo, :title, :introduction, :landing_picture_id, :brief_introduction,
+        :css_style
     end
 end

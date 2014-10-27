@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141024024939) do
+ActiveRecord::Schema.define(version: 20141027083705) do
 
   create_table "ckeditor_assets", force: true do |t|
     t.string   "data_file_name",               null: false
@@ -48,6 +48,7 @@ ActiveRecord::Schema.define(version: 20141024024939) do
     t.integer  "landing_picture_id"
     t.integer  "position",           default: 0
     t.text     "brief_introduction"
+    t.text     "css_style"
   end
 
   create_table "landing_pictures", force: true do |t|
