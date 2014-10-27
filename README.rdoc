@@ -1,3 +1,5 @@
 == README
 
 Daisy go~
+
+maintained by happyteam.
