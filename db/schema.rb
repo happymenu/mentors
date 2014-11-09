@@ -13,6 +13,14 @@
 
 ActiveRecord::Schema.define(version: 20141027083705) do
 
+  create_table "categories", force: true do |t|
+    t.string   "name"
+    t.string   "logo"
+    t.string   "link_to"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "ckeditor_assets", force: true do |t|
     t.string   "data_file_name",               null: false
     t.string   "data_content_type"
