@@ -24,12 +24,12 @@
         </td>
         <td style='text-align:center; width: 16%; '>
           <% if item.not_thumbed_up_by_current_ip request.remote_ip, item.id %>
-            <%= link_to image_tag('thumbup.jpg', style: 'width: 60%'), "/scores?item_id=#{item.id}", method: 'post' %>
+            <%= link_to image_tag('thumbup.png', style: 'width: 60%'), "/scores?item_id=#{item.id}", method: 'post' %>
             <div style='font-size: 18px'>
               <%= item.scores.count %> 票
             </div>
           <% else %>
-            <%= image_tag('thumbup.jpg', style: 'width: 60%') %>
+            <%= image_tag('thumbup.png', style: 'width: 60%') %>
             <div style='font-size: 18px'>
               <%= item.scores.count %> 票(已投)
             </div>
