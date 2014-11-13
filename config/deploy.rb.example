@@ -58,7 +58,7 @@ task :cp_database_yml do
   run "ln -s #{shared_path}/files #{release_path}/public/files"
   # 因为在开发机器上会存在这个文件夹，所以需要先把它删掉，再 ln
   run "rm #{release_path}/public/uploads -rf"
-  run "ln -s #{shared_path}/pulic/uploads #{release_path}/public/uploads"
+  run "ln -s #{shared_path}/public/uploads #{release_path}/public/uploads"
   puts "=== done (executing my customized command)"
 end
 
