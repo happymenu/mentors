@@ -3,6 +3,7 @@
 //= require jquery_ujs
 //= require jquery.ui.all
 //= require ckeditor/init
+//= require responsive-nav
 //= require_tree .
 
 

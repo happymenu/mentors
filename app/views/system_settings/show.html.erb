@@ -9,6 +9,10 @@
   <strong>Page cache time:</strong>
   <%= @system_setting.page_cache_time %>
 </p>
+<p>
+  <strong>Current time:</strong>
+  <%= @system_setting.current_time %>
+</p>
 
 <%= link_to 'Edit', edit_system_setting_path(@system_setting) %> |
 <%= link_to 'Back', system_settings_path %>

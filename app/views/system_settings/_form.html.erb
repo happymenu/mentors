@@ -8,6 +8,10 @@
     <td>页面缓存时间(秒)</td>
     <td><%= f.number_field :page_cache_time , class: 'form-control'%></td>
   </tr>
+  <tr data-toggle="tooltip" data-placement="right" title="时间">
+    <td style='widtd: 200px'>时间</td>
+    <td><%= f.text_field :current_time, class: 'form-control', placeholder: '例如：2014-11' %></td>
+  </tr>
   <tr>
     <td>
       <%= f.submit '确定', class: 'btn btn-primary' %>

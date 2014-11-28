@@ -11,15 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141027083705) do
-
-  create_table "categories", force: true do |t|
-    t.string   "name"
-    t.string   "logo"
-    t.string   "link_to"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
+ActiveRecord::Schema.define(version: 20141127090730) do
 
   create_table "ckeditor_assets", force: true do |t|
     t.string   "data_file_name",               null: false
@@ -81,6 +73,8 @@ ActiveRecord::Schema.define(version: 20141027083705) do
     t.integer  "page_cache_time", default: 60
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "current_time"
+    t.string   "string"
   end
 
   create_table "user_account_records", force: true do |t|
