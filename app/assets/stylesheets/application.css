@@ -3,7 +3,5 @@
  *= require customized_bootstrap
  *= require jquery.ui.all
  *= require_self
- *= require responsive-nav
- *= require user_index
  */
 

@@ -9,10 +9,6 @@
     <th>页面缓存时间</th>
     <td><%= @system_setting.page_cache_time %></td>
   </tr>
-  <tr>
-    <th style='width: 200px'>时间</th>
-    <td><%= @system_setting.current_time %></td>
-  </tr>
 </table>
 
 <%= link_to '编辑', edit_system_setting_path(@system_setting), class: 'btn btn-default' %>

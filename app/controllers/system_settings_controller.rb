@@ -39,6 +39,6 @@ class SystemSettingsController < ApplicationController
     end
 
     def system_setting_params
-      params.require(:system_setting).permit(:site_name, :page_cache_time, :current_time)
+      params.require(:system_setting).permit(:site_name, :page_cache_time)
     end
 end
