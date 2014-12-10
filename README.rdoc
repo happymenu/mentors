@@ -3,3 +3,7 @@
 Daisy go~
 
 maintained by happyteam.
+
+== Installation
+
+1. install: rails, mysql, ruby, imagemagick

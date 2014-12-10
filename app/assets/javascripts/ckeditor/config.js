@@ -6,7 +6,7 @@ For licensing, see LICENSE.html or http://ckeditor.com/license
 CKEDITOR.editorConfig = function( config )
 {
   // Define changes to default configuration here. For example:
-  config.language = 'zh-CN';
+  // config.language = 'zh-CN';
   config.height='600px';
   // config.uiColor = '#AADC6E';
 
